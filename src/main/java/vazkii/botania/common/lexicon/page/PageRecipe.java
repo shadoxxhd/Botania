@@ -38,7 +38,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class PageRecipe extends LexiconPage {
 
 	int relativeMouseX, relativeMouseY;
-	ItemStack tooltipStack, tooltipContainerStack;
+	ItemStack tooltipStack;
 	boolean tooltipEntry;
 
 	static boolean mouseDownLastTick = false;
@@ -80,14 +80,10 @@ public class PageRecipe extends LexiconPage {
 
 			if(tooltipEntry) {
 				vazkii.botania.client.core.helper.RenderHelper.renderTooltipOrange(mx, my + tooltipY, Arrays.asList(EnumChatFormatting.GRAY + StatCollector.translateToLocal("botaniamisc.clickToRecipe")));
-				tooltipY += 18;
 			}
-
-			if(tooltipContainerStack != null)
-				vazkii.botania.client.core.helper.RenderHelper.renderTooltipGreen(mx, my + tooltipY, Arrays.asList(EnumChatFormatting.AQUA + StatCollector.translateToLocal("botaniamisc.craftingContainer"), tooltipContainerStack.getDisplayName()));
 		}
 
-		tooltipStack = tooltipContainerStack = null;
+		tooltipStack = null;
 		tooltipEntry = false;
 		GL11.glDisable(GL11.GL_BLEND);
 		mouseDownLastTick = Mouse.isButtonDown(0);
@@ -170,12 +166,6 @@ public class PageRecipe extends LexiconPage {
 					Minecraft.getMinecraft().displayGuiScreen(newGui);
 				}
 			} else tooltipEntry = false;
-
-			if(accountForContainer) {
-				ItemStack containerStack = stack.getItem().getContainerItem(stack);
-				if(containerStack != null && containerStack.getItem() != null)
-					tooltipContainerStack = containerStack;
-			}
 		}
 
 		GL11.glDisable(GL11.GL_LIGHTING);

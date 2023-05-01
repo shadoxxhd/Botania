@@ -36,6 +36,7 @@ import vazkii.botania.client.lib.LibResources;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.core.helper.InventoryHelper;
 
 public class PageCraftingRecipe extends PageRecipe {
 
@@ -140,7 +141,7 @@ public class PageCraftingRecipe extends PageRecipe {
 				for(int x = 0; x < width; x++) {
 					Object input = shaped.getInput()[y * width + x];
 					if(input != null)
-						renderItemAtGridPos(gui, 1 + x, 1 + y, input instanceof ItemStack ? (ItemStack) input : ((ArrayList<ItemStack>) input).get(0), true);
+						renderItemAtGridPos(gui, 1 + x, 1 + y, InventoryHelper.cycleItemStackForDisplay(input), true);
 				}
 
 			oreDictRecipe = true;
@@ -173,7 +174,7 @@ public class PageCraftingRecipe extends PageRecipe {
 
 						Object input = shapeless.getInput().get(index);
 						if(input != null)
-							renderItemAtGridPos(gui, 1 + x, 1 + y, input instanceof ItemStack ? (ItemStack) input : ((ArrayList<ItemStack>) input).get(0), true);
+							renderItemAtGridPos(gui, 1 + x, 1 + y, InventoryHelper.cycleItemStackForDisplay(input), true);
 					}
 			}
 
