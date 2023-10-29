@@ -1630,6 +1630,7 @@ item.botania:cosmetic31.name=Questgiver Mark
 item.botania:manaString.name=Mana Infused String
 item.botania:swapRing.name=Ring of Correction
 item.botania:flowerBag.name=Flower Pouch
+item.botania:shroomBag.name=Mushroom Pouch
 item.botania:phantomInk.name=Phantom Ink
 item.botania:poolMinecart.name=Minecart with Mana Pool
 item.botania:pinkinator.name=The Pinkinator
@@ -2120,6 +2121,12 @@ botania.tagline.flowerBag=A trusty pouch to hold your floral goodness
 botania.page.flowerBag0=The laws of physics regarding one's &4Inventory&0 are somewhat skewed in this world. Thanks to that, carrying an array of different colors of flowers turns out to be a major hassle. Luckily, a &1Flower Pouch&0 takes care of all those issues. It can store up to one stack of each color of &1Mystical Flower&0, not only that but it'll passively catch any that enter the holder's inventory.
 botania.page.flowerBag2=Items won't be added automatically to the pouch if that's the item being held.<br>Furthermore, shift-right clicking the pouch into a &1Chest&0 or other inventory will store the flowers it contains into said inventory. 
 botania.page.flowerBag1=Pull a copter out of it (any colors work)
+
+# -- MUSHROOM POUCH
+botania.entry.shroomBag=Mushroom Pouch
+botania.tagline.shroomBag=A trusty pouch to hold your mushroom goodness
+botania.page.shroomBag0=Similar to the &1Flower Pouch&0, the mushroom pouch will hold all of those pesky &1Mystical Mushrooms&0 that have been clogging up your inventory.<br>Remember the bag will not pick up items if you are holding it in your hand.<br>Furthermore, shift-right clicking the pouch into a &1Chest&0 or other inventory will store the flowers it contains into said inventory.
+botania.page.shroomBag1=Any colors work
 
 # -- WRAP
 botania.entry.wrap=Wrap
