@@ -69,7 +69,6 @@ public final class LexiconData {
 	public static LexiconEntry terrasteel;
 	public static LexiconEntry blackLotus;
 	public static LexiconEntry flowerBag;
-	public static LexiconEntry shroomBag;
 	public static LexiconEntry gardenOfGlass;
 
 	public static LexiconEntry manaIntro;
@@ -395,10 +394,6 @@ public final class LexiconData {
 		flowerBag = new BLexiconEntry(LibLexicon.BASICS_FLOWER_BAG, categoryBasics);
 		flowerBag.setLexiconPages(new PageText("0"), new PageText("2"),
 				new PageCraftingRecipe("1", ModCraftingRecipes.recipeFlowerBag));
-
-		shroomBag = new BLexiconEntry(LibLexicon.BASICS_SHROOM_BAG, categoryBasics);
-		shroomBag.setLexiconPages(new PageText("0"),
-				new PageCraftingRecipe("1", ModCraftingRecipes.recipeShroomBag));
 
 		if (Botania.gardenOfGlassLoaded) {
 			gardenOfGlass = new BLexiconEntry(LibLexicon.BASICS_GARDEN_OF_GLASS, categoryBasics);
