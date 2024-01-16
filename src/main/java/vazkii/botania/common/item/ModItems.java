@@ -456,12 +456,17 @@ public final class ModItems {
 		OreDictionary.registerOre(LibOreDict.FLASK, new ItemStack(vial, 1, 1));
 
 		BotaniaAPI.blackListItemFromLoonium(lexicon);
-		BotaniaAPI.blackListItemFromLoonium(overgrowthSeed);
-		BotaniaAPI.blackListItemFromLoonium(blackLotus);
+		//BotaniaAPI.blackListItemFromLoonium(overgrowthSeed);
+		//BotaniaAPI.blackListItemFromLoonium(blackLotus);
 		int min = Item.getIdFromItem(Items.record_13);
 		int max = Item.getIdFromItem(Items.record_wait);
 		for(int i = min; i <= max; i++)
 			BotaniaAPI.blackListItemFromLoonium(Item.getItemById(i));
+		BotaniaAPI.blackListItemFromLoonium("EnderIO:itemConduitProbe");
+		BotaniaAPI.blackListItemFromLoonium("Thaumcraft:ItemBaubleBlanks");
+		BotaniaAPI.blackListItemFromLoonium("EnderIO:item.darkSteel_boots");
+		BotaniaAPI.blackListItemFromLoonium("EnderIO:item.darkSteel_sword");
+		BotaniaAPI.blackListItemFromLoonium("minecraft:saddle");
 
 		OreDictionary.registerOre("rodBlaze", Items.blaze_rod);
 		OreDictionary.registerOre("powderBlaze", Items.blaze_powder);

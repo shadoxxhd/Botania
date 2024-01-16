@@ -87,7 +87,7 @@ public final class BotaniaAPI {
 	public static Map<String, Integer> oreWeights = new HashMap<String, Integer>();
 	public static Map<String, Integer> oreWeightsNether = new HashMap<String, Integer>();
 	public static Map<Item, Block> seeds = new HashMap();
-	public static Set<Item> looniumBlacklist = new LinkedHashSet<Item>();
+	public static Set<String> looniumBlacklist = new LinkedHashSet<String>();
 	public static Set<Block> paintableBlocks = new LinkedHashSet<Block>();
 	public static Set<String> magnetBlacklist = new LinkedHashSet<String>();
 	public static Set<Class<? extends Entity>> gravityRodBlacklist = new LinkedHashSet<Class<? extends Entity>>();
@@ -618,7 +618,10 @@ public final class BotaniaAPI {
 	 * Blacklists an item from the Loonium drop table.
 	 */
 	public static void blackListItemFromLoonium(Item item) {
-		looniumBlacklist.add(item);
+		looniumBlacklist.add(item.getUnlocalizedName());
+	}
+	public static void blackListItemFromLoonium(String name) {
+		looniumBlacklist.add(name);
 	}
 
 	/**
