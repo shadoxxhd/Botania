@@ -43,7 +43,7 @@ public class SubTileGourmaryllis extends SubTileGenerating {
 		//	sync();
 		//}
 		if (cooldown > 0) {
-			if (cooldown-- % 10 == 0)
+			if (cooldown-- % 10 == 1)
 				mana = Math.min(getMaxMana(), mana + storedMana);
 		}
 		int slowdown = getSlowdownFactor();
