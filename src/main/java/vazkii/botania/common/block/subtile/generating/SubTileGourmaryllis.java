@@ -43,8 +43,10 @@ public class SubTileGourmaryllis extends SubTileGenerating {
 		//	sync();
 		//}
 		if (cooldown > 0) {
-			if (cooldown-- % 10 == 1)
+			if (cooldown-- % 10 == 1) {
 				mana = Math.min(getMaxMana(), mana + storedMana);
+				sync();
+			}
 		}
 		int slowdown = getSlowdownFactor();
 
@@ -58,9 +60,9 @@ public class SubTileGourmaryllis extends SubTileGenerating {
 						float val = ((ItemFood) stack.getItem()).func_150905_g(stack);
 						float satMod = ((ItemFood) stack.getItem()).func_150906_h(stack);
 						if (satMod > 0.5) // use saturation if higher
-							val *= 2 * satMod; // round down, if not right below integer (x%1>=0.8)
+							val *= 2 * satMod; // saturation bars = hunger bars * saturation modifier * 2
 						storedMana = (int) (val * 64 + 0.5); // round
-						cooldown = (int) (val * 10 * stack.stackSize + 0.5);
+						cooldown = (int) (val * 10 + 0.5);
 						supertile.getWorldObj().playSoundEffect(supertile.xCoord, supertile.yCoord, supertile.zCoord, "random.eat", 0.2F, 0.5F + (float) Math.random() * 0.5F);
 						sync();
 					} else for (int i = 0; i < 10; i++) {
@@ -70,9 +72,9 @@ public class SubTileGourmaryllis extends SubTileGenerating {
 						float mz = (float) (Math.random() - 0.5) * m;
 						supertile.getWorldObj().spawnParticle("iconcrack_" + Item.getIdFromItem(stack.getItem()), item.posX, item.posY, item.posZ, mx, my, mz);
 					}
-					if (!remote)
-						item.setDead();
 				}
+				if (!remote)
+					item.setDead();
 			}
 		}
 	}
