@@ -35,7 +35,7 @@ public class SubTileLoonuim extends SubTileFunctional {
 			ItemStack stack;
 			do {
 				stack = ChestGenHooks.getOneItem(ChestGenHooks.DUNGEON_CHEST, rand);
-			} while(stack == null || BotaniaAPI.looniumBlacklist.contains(stack.getItem().getUnlocalizedName()));
+			} while(stack == null || stack.getItem() == null || BotaniaAPI.looniumBlacklist.contains(stack.getItem().getUnlocalizedName()));
 
 			int bound = RANGE * 2 + 1;
 			EntityItem entity = new EntityItem(supertile.getWorldObj(), supertile.xCoord - RANGE + rand.nextInt(bound) , supertile.yCoord + 1, supertile.zCoord - RANGE + rand.nextInt(bound), stack);
